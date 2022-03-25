@@ -1,0 +1,65 @@
+<form class="ml-5 mt-5" [formGroup]="register" (ngSubmit)="register">
+    <h1>Registration Form</h1> <br>
+<div class="form-row">
+<!--First Name-->
+    <div class="col-sm-5">
+    <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="email" class="form-control" id="firstname" aria-describedby="emailHelp" 
+        formControlName="firstname" name="firstname"  required>
+    </div>
+    </div>
+    <!--Last Name-->
+    <div class="col-sm-5">
+    <div class="form-group ">
+        <label for="lastname">Last Name</label>
+        <input type="email" class="form-control" id="lastname" aria-describedby="emailHelp"
+         formControlName="lastname" name="lastname" required>
+    </div>
+    </div>
+</div>
+<div class="form-row">
+    <!--Email-->
+    <div class="col-sm-5">
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" 
+        formControlName="email" name="email" required>
+    </div>
+    </div>
+    <!--password-->
+    <div class="col-sm-5">
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password"
+         name="password" required>
+    </div>
+    </div>
+</div>
+<div class="form-row">
+    <!--Country-->
+    <div class="col-sm-5">
+    <div class="form-group">
+        <label for="country">Country</label>
+        <input type="email" class="form-control" id="country" aria-describedby="emailHelp"
+         formControlName="country" name="country" required>
+    </div>
+    </div>
+    <!--Date of Birth-->
+    <div class="col-sm-5">
+        <div class="form-group">
+            <label for="dateofbirth">Date of Birth</label>
+            <input type="date" class="form-control" id="dateofbirth" aria-describedby="dateofbirth" 
+            formControlName="dateofbirth" name="dateofbirth" required>
+        </div>
+    </div>
+</div>
+    
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="terms" formControlName="terms" 
+        name="terms" required>
+        <label class="form-check-label" for="exampleCheck1">Please check the terms and conditions!</label>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click)="data()">Sign Up</button>
+</form>

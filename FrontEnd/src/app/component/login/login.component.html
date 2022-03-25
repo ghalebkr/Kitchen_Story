@@ -1,0 +1,73 @@
+<form class="ml-5 mt-5" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+    <h1 style="text-align: center;">Login Page</h1> <br>
+    <div class="form-row">
+        <div class="col-sm-3"></div>
+        <!--Email-->
+        <div class="col-sm-6">
+            <div class="form-group ">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    formControlName="email" name="email" required>
+                    <small *ngIf="hasError('email')" [class]="hasError('email') ? 'has-error' : ''">
+                        <div >
+                            <span *ngIf="email?.errors?.['required']">Email is a required field</span>
+                            <span *ngIf="email?.errors?.['email']">Please enter a valid email address!</span>
+                        </div>
+                    </small>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="form-row">
+        <div class="col-sm-3"></div>
+        <!--Password-->
+        <div class="col-sm-6">
+            <div class="form-group ">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" aria-describedby="emailHelp"
+                    formControlName="password" name="password">
+                    <small *ngIf="hasError('password')" [class]="hasError('password') ? 'has-error' : ''">
+                        <div>
+                            <span *ngIf="password?.errors?.['required']">Password is a required field</span>
+                            <span *ngIf="password?.errors?.['minlength']">password is a min 6 char long field</span>
+                            <span *ngIf="password?.errors?.['maxlength']">password is a max 18 char long field</span>
+                        </div>
+                    </small>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <!--Remember me-->
+    <div class="form-row">
+        <div class="col-sm-3"></div>
+        <div class="form-group col-sm-6">
+            <div class="form-check">
+                <input type="checkbox" name="rememberme" id="rememberme" class="form-check-input"
+                    formControlName="rememberme">
+                <label for="rememberme" class="form-check-label">Remember me !</label>
+                <small *ngIf="hasError('rememberme')" [class]="hasError('rememberme') ? 'has-error' : ''">
+                    <div>
+                        <span *ngIf="rememberme?.errors?.['required']">Rememberme is a required field</span>
+                    </div>
+                </small>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <!--Submit-->
+    <div class="row ">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <button type="submit" class="btn btn-success btn-block">
+                Submit</button>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+</form>
+
+
+
+
+
+

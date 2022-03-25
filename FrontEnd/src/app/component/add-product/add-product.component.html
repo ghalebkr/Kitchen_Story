@@ -1,0 +1,33 @@
+<h1 class="ml-5 mt-5">Add New Products</h1>
+<form class="ml-5 mt-5" [formGroup]="addProduct" (ngSubmit)="onSubmit(addProduct)">
+    <!--URL-->
+    <div class="col-sm-1"></div>
+    <div class="form-group col-sm-10">
+        <label for="imageUrl">Add Product's Image URL</label>
+        <input type="text" class="form-control" id="imageUrl"  name="imageUrl"
+         aria-describedby="emailHelp" formControlName="imageUrl">
+    </div>
+    <!--Title-->
+    <div class="col-sm-1"></div>
+    <div class="form-group col-sm-10 ">
+        <label for="title">Add Product's Title</label>
+        <input type="text" class="form-control" id="title" name="title"
+         aria-describedby="emailHelp" formControlName="title">
+    </div>
+    <!--Description-->
+    <div class="form-group col-sm-10 ">
+        <label for="description">Add Product's Description</label>
+        <input type="text" class="form-control" id="description" name="description" 
+        aria-describedby="emailHelp" formControlName="description">
+    </div>
+    <!--Price-->
+    <div class="form-group col-sm-10">
+        <div class=""></div>
+        <label for="price">Add Product's Price</label>
+        <input type="number" class="form-control" id="price" name="price" 
+        aria-describedby="emailHelp" formControlName="price">
+    </div>
+    <div class="ml-3">
+    <button type="submit" class="btn btn-primary">Add Product</button>
+    </div>
+</form>

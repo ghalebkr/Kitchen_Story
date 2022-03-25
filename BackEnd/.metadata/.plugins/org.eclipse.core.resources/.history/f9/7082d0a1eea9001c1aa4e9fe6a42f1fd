@@ -1,0 +1,5 @@
+package com.onlinetest.model;
+
+public class Product {
+
+}

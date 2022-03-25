@@ -1,0 +1,26 @@
+<div class="container">
+ <input class="form-control mt-5" name="search" [(ngModel)]="search" type="text" placeholder="Search for Product..." >
+</div>
+<div class="container"> 
+    <div class="row">
+        <div  *ngFor="let product of product">
+<div class="card ml-5 mt-5 text-center" style="width: 18rem;" *ngIf="product.title.includes(search) || product.description.includes(search) ">
+    <img [src]="product.imageUrl" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.description }}</p>
+        <p class="card-text">{{product.price }}</p>
+    </div>
+    <div class="row" >
+    <button type="button" class="btn btn-success" (click)="cart(product.id)">Buy</button>
+    <form [formGroup]="cartForm" (ngSubmit)="cartForm" >
+    <input type="number" class="form-control" name="quantity" formControlName="quantity">
+    </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<button type="button" class="btn btn-success col-6 ml-auto mr-auto mt-5 mb-5 text-center" routerLink="/review" (click)="cart(product.id)">Review</button>
+</div>
